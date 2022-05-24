@@ -1,0 +1,44 @@
+body {
+    background-color: lightgray;
+  }
+  h1 {
+    color: darkslategray;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  h2 {
+    color: darkslategray;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  p {
+    color: darkslategray;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid none;
+    padding: 30px;
+  }
+  a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: gray;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: gray;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  iframe {
+    border: none;
+    height:500px;width:800px;
+  }
