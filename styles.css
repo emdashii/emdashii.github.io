@@ -157,6 +157,11 @@ flex: 60%;
   }
   .nav-test {
     max-height: fit-content;
+    height: 234px;
+  }
+  .content .main {
+    border: none;
+    padding: 0px;
   }
 }
 
@@ -210,6 +215,5 @@ flex: 60%;
 
 /* Content */
 .content {
-
   padding: 16px;
 }
