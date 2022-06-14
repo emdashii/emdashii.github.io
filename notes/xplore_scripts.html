@@ -32,17 +32,19 @@
       <p class="lead" style="text-align:center;font-size:2vw">used in servicenow</p>
       <div class="container">
         <h2 class="mt-5">basic script</h2>
-        <p>
-          <kbd>var count = 0;<br></kbd>
-          <kbd>var gr = new GlideRecord('incident');<br></kbd>
-          <kbd>gr.query();<br></kbd>
-          <kbd>while (gr.next()) {<br></kbd>
-          <kbd>count++;<br></kbd>
-          <kbd>gr.update();<br></kbd>
-          <kbd>}<br></kbd>
-          <kbd>gs.log('count: ' + count);<br></kbd>
-          <kbd>gr</kbd>
-        </p>
+        <div class="bg-dark rounded">
+          <p>
+            <kbd>var count = 0;<br></kbd>
+            <kbd>var gr = new GlideRecord('incident');<br></kbd>
+            <kbd>gr.query();<br></kbd>
+            <kbd>while (gr.next()) {<br></kbd>
+            <kbd>count++;<br></kbd>
+            <kbd>gr.update();<br></kbd>
+            <kbd>}<br></kbd>
+            <kbd>gs.log('count: ' + count);<br></kbd>
+            <kbd>gr</kbd>
+          </p>
+        </div>
         <p>Useful commands: <br>
           <kbd>gr.deleteRecord();<br></kbd>
           <kbd>gr.addQuery('active',false);<br></kbd>
@@ -53,11 +55,13 @@
           <kbd>gr.insert();</kbd>
         </p>
         <p>Count records in a query: <br>
+          <div class="bg-dark rounded">
           <kbd>var gr = new GlideRecord('elements');<br></kbd>
           <kbd>gr.addQuery('hierarchy', 'sys_id');<br></kbd>
           <kbd>gr.query();<br></kbd>
           <kbd>gs.log('Incident count: ' + gr.getRowCount());<br></kbd>
           <kbd>gr</kbd>
+          </div>
         </p>
       </div>
       <div class="container">
