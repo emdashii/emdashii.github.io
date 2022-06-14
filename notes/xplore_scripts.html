@@ -30,14 +30,42 @@
     <div class="container">
       <h1 class="mt-5">xplore scripts</h1>
       <p class="lead">used in servicenow</p>
-      <div class="test">
-        <iframe
-          src="https://docs.google.com/document/d/e/2PACX-1vR4R59DCrQvB6B7rp0tt3n7AWGqwMDGSPTOanTKdHb7WBETkfInAVyR3HaIbZn8GO0VUHNPQKbqmpCr/pub?embedded=true"></iframe>
+      <div class="container">
+        <h2 class="mt-5">basic script</h2>
+        <p>
+          <kbd>var count = 0;<br></kbd>
+          <kbd>var gr = new GlideRecord('incident');<br></kbd>
+          <kbd>gr.query();<br></kbd>
+          <kbd>while (gr.next()) {<br></kbd>
+          <kbd>count++;<br></kbd>
+          <kbd>gr.update();<br></kbd>
+          <kbd>}<br></kbd>
+          <kbd>gs.log('count: ' + count);<br></kbd>
+          <kbd>gr</kbd>
+        </p>
+        <p>Useful commands: <br>
+          <kbd>gr.deleteRecord();<br></kbd>
+          <kbd>gr.addQuery('active',false);<br></kbd>
+          <kbd>gr.addNotNullQuery('short_description');</kbd>
+        </p>
+        <p>Create a new record: <br>
+          <kbd>gr.initialize();<br></kbd>
+          <kbd>gr.insert();</kbd>
+        </p>
+        <p>Count records in a query: <br>
+          <kbd>var gr = new GlideRecord('elements');<br></kbd>
+          <kbd>gr.addQuery('hierarchy', 'sys_id');<br></kbd>
+          <kbd>gr.query();<br></kbd>
+          <kbd>gs.log('Incident count: ' + gr.getRowCount());<br></kbd>
+          <kbd>gr</kbd>
+        </p>
       </div>
       <div class="container">
-        <h2>useful links</h2>
+        <h2 class="flex-shrink-0">useful links</h2>
         <a href="https://servicenowguru.com/scripting/gliderecord-query-cheat-sheet/"
-          class="link-dark text-decoration-none">glide record cheat sheet</a>
+          class="link-dark text-decoration-none">glide record cheat sheet</a><br>
+        <a href="https://therockethq.gitbooks.io/servicenow1/content/index/index/fundamentals/fundamentals-concepts/cmdb/dependency-view.html"
+          class="link-dark text-decoration-none">dependency view</a>
         <br><br><br><br>
       </div>
     </div>
