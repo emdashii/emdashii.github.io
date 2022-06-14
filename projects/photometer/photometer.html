@@ -1,59 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>DIY Photometer</title>
-<link rel="stylesheet" href="../../styles.css">
-<link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
-<link rel="manifest" href="../../images/site.webmanifest">
-<meta charset="UTF-8">
-<meta name="description" content="Elliott's Webiste">
-<meta name="keywords" content="Resume, Projects, Github, Programming">
-<meta name="author" content="Elliott Claus">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Info -->
+  <title>DIY Photometer</title>
+  <meta name="author" content="Elliott Claus">
+  <meta name="description" content="Elliott's Webiste">
+  <meta name="keywords" content="Resume, Projects, Github, Programming">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <!-- References -->
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../components/projectsHeader.js" type="text/javascript" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../images/favicon/site.webmanifest">
 </head>
-<body>
-<div class="container">
-  <!-- Header -->
-  <div class="header">
-    <h1>DIY Photometer</h1>
-    <p>Designing and manufacturing a DIY Photometer</p>
-  </div>
 
-  <!-- Naviagtion Bar -->
-  <div class="nav-test">
-    <iframe src="../../nav.html" title="Navbar"></iframe>
-  </div>
-
-  <!-- The flexible grid (content) -->
-  <div class="row">
-    <div class="leftside">
-    </div>
-    <div class="main">
+<body class="d-flex flex-column h-100 vsc-initialized">
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+    <!-- Navbar -->
+    <projects-header></projects-header>
+    <!-- Main -->
+    <div class="container">
+      <h1 class="mt-5">DIY Photometer</h1>
+      <p class="lead">Designing and manufacturing a DIY Photometer</p>
       <div class="content">
-        <img src="../../images/finishedphotometer.jpg" alt="Photometer" width="400" height="300">
-        <img src="../../images/PCB-V1.4.jpg" alt="PCB" width="400" height="200">
+        <img class="img-fluid" src="../../images/finishedphotometer.jpg" class="rounded" alt="Finished Photometer">
+        <img class="img-fluid" src="../../images/PCB-V1.4.jpg" class="rounded" alt="PCB">
         <h5>Photometer and custom PCB</h5>
       </div>
-      <div class="content">
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vTN_IruSsyRiEqRfeypwA_AVI7WULfUrmLebOINVbU0YiEs8vOen6ntGLrQxFJYw5_a2Jxnk__1jMMh/pub?embedded=true"></iframe>
+      <div class="test">
+        <iframe
+          src="https://docs.google.com/document/d/e/2PACX-1vTN_IruSsyRiEqRfeypwA_AVI7WULfUrmLebOINVbU0YiEs8vOen6ntGLrQxFJYw5_a2Jxnk__1jMMh/pub?embedded=true"></iframe>
       </div>
       <div class="content">
-        <p><a href="Building-Instructions.pdf">Build Instructions</a> 
-          <br><a href="DIY-Photometer-Sample-Procedure.pdf">Sample Procedure</a>
-          <br><a href="https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot">Google drive folder</a>
+        <p><a href="Building-Instructions.pdf" class="link-dark text-decoration-none">Build Instructions</a>
+          <br><a href="DIY-Photometer-Sample-Procedure.pdf" class="link-dark text-decoration-none">Sample Procedure</a>
+          <br><a href="https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot"
+            class="link-dark text-decoration-none">Google drive folder</a>
         </p>
+        <br><br><br><br>
       </div>
-      </div>
-    <div class="rightside">
     </div>
-  </div>
-
+  </main>
   <!-- Footer -->
-  <div class="footer">
-    a website by <a href="https://github.com/emdashii">elliott claus</a>
-  </div>
-</div>
+  <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+    <div class="container">
+      <span class="text-muted">a website by <a href="https://github.com/emdashii"
+          class="link-dark text-decoration-none">Elliott Claus</a></span>
+    </div>
+  </footer>
+  <!-- Necessary for dropdowns -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
