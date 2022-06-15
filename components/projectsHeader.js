@@ -18,10 +18,10 @@ class Header extends HTMLElement {
                     <a class="nav-link active" aria-current="page" href="../../about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/elliott-claus-075bb01b9/">LinkedIn</a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/elliott-claus-075bb01b9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/emdashii">GitHub</a>
+                    <a class="nav-link" href="https://github.com/emdashii" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
