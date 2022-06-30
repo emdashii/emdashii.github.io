@@ -29,49 +29,54 @@
     <notes-header></notes-header>
     <!-- Main -->
     <div class="container">
-      <h1 class="mt-5" style="text-align:center;font-size:3vw">xplore scripts</h1>
-      <p class="lead" style="text-align:center;font-size:2vw">used in servicenow</p>
+      <h1 class="mt-5" style="text-align:center;">xplore scripts</h1>
+      <p class="lead" style="text-align:center;text-indent: 0px;font-size: x-large;">used in servicenow</p>
       <div class="container">
-        <h2 class="mt-5">basic script</h2>
-        <div class="bg-dark rounded">
-          <p>
-            <kbd>var count = 0;<br></kbd>
-            <kbd>var gr = new GlideRecord('incident');<br></kbd>
-            <kbd>gr.query();<br></kbd>
-            <kbd>while (gr.next()) {<br></kbd>
-            <kbd>count++;<br></kbd>
-            <kbd>gr.update();<br></kbd>
-            <kbd>}<br></kbd>
-            <kbd>gs.log('count: ' + count);<br></kbd>
-            <kbd>gr</kbd>
-          </p>
-        </div>
-        <p>Useful commands: <br>
-          <kbd>gr.deleteRecord();<br></kbd>
-          <kbd>gr.addQuery('active',false);<br></kbd>
-          <kbd>gr.addNotNullQuery('short_description');</kbd>
-        </p>
-        <p>Create a new record: <br>
-          <kbd>gr.initialize();<br></kbd>
-          <kbd>gr.insert();</kbd>
-        </p>
-        <p>Count records in a query: <br>
-          <div class="bg-dark rounded">
-          <kbd>var gr = new GlideRecord('elements');<br></kbd>
-          <kbd>gr.addQuery('hierarchy', 'sys_id');<br></kbd>
-          <kbd>gr.query();<br></kbd>
-          <kbd>gs.log('Incident count: ' + gr.getRowCount());<br></kbd>
-          <kbd>gr</kbd>
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="mt-5">basic script</h2>
+            <div class="bg-dark rounded">
+              <p>
+                <kbd>var count = 0;<br></kbd>
+                <kbd>var gr = new GlideRecord('incident');<br></kbd>
+                <kbd>gr.query();<br></kbd>
+                <kbd>while (gr.next()) {<br></kbd>
+                <kbd>count++;<br></kbd>
+                <kbd>gr.update();<br></kbd>
+                <kbd>}<br></kbd>
+                <kbd>gs.log('count: ' + count);<br></kbd>
+                <kbd>gr</kbd>
+              </p>
+            </div>
+            <p>Useful commands: <br>
+              <kbd>gr.deleteRecord();<br></kbd>
+              <kbd>gr.addQuery('active',false);<br></kbd>
+              <kbd>gr.addNotNullQuery('short_description');</kbd>
+            </p>
+            <p>Create a new record: <br>
+              <kbd>gr.initialize();<br></kbd>
+              <kbd>gr.insert();</kbd>
+            </p>
+            <p>Count records in a query: <br>
+            <div class="bg-dark rounded">
+              <kbd>var gr = new GlideRecord('elements');<br></kbd>
+              <kbd>gr.addQuery('hierarchy', 'sys_id');<br></kbd>
+              <kbd>gr.query();<br></kbd>
+              <kbd>gs.log('Incident count: ' + gr.getRowCount());<br></kbd>
+              <kbd>gr</kbd>
+            </div>
+            </p>
           </div>
-        </p>
-      </div>
-      <div class="container">
-        <h2 class="flex-shrink-0">useful links</h2>
-        <a href="https://servicenowguru.com/scripting/gliderecord-query-cheat-sheet/" target="_blank" rel="noopener noreferrer"
-          class="link-dark text-decoration-none">glide record cheat sheet</a><br>
-        <a href="https://therockethq.gitbooks.io/servicenow1/content/index/index/fundamentals/fundamentals-concepts/cmdb/dependency-view.html"
-        target="_blank" rel="noopener noreferrer" class="link-dark text-decoration-none">dependency view</a>
-        <br><br><br><br>
+          <div class="container">
+            <h2 class="flex-shrink-0">useful links</h2>
+            <a href="https://servicenowguru.com/scripting/gliderecord-query-cheat-sheet/" target="_blank"
+              rel="noopener noreferrer" class="link-dark text-decoration-none">glide record cheat sheet</a><br>
+            <a href="https://therockethq.gitbooks.io/servicenow1/content/index/index/fundamentals/fundamentals-concepts/cmdb/dependency-view.html"
+              target="_blank" rel="noopener noreferrer" class="link-dark text-decoration-none">dependency view</a>
+            <br><br><br><br>
+          </div>
+        </div>
+        <div class="col-lg-5"></div>
       </div>
     </div>
 

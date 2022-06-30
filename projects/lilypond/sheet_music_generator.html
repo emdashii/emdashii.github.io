@@ -30,112 +30,125 @@
     <!-- Main -->
     <div class="container">
       <h1 class="mt-5">counterpoint sheet music generator</h1>
-      <p class="lead">using c++ and lilypond</p>
-      <p>What is counterpoint and why does it make a good candidate for using code to generate music?</p>
-      <p>Counterpoint is a specific style of music, where one melody is generated based on the note that came before,
-        using specific rules. This means that if you can write a melody, the program can write a counterpoint to go
-        along with it. </p>
-      <img class="img-fluid rounded" src="../../images/musicgenerator/image1.png" alt="Counterpoint textbook">
-      <p>These images are from Burstein, L. Poundie., and Joseph Nathan. Straus. <em>Concise Introduction to Tonal
-          Harmony.</em>
-        W.W. Norton, 2016. The top image demonstrates a counterpoint melody, and the numbers represent the intervals
-        between the notes. The bottom image shows some of the rules for what counterpoint melodies cannot do.
-      </p>
-      <p>What were the requirements and challenges for this project?</p>
-      <ul class="list-unstyled">
-        <li>Writing Music:
-          <ul>
-            <li>Translating music theory into code</li>
-            <li>Saving music notes</li>
-            <li>Using logic to check for errors</li>
-            <li>Deciding which part of the program does what</li>
+      <p class="lead" style="text-indent: 0px;font-size: x-large;">using c++ and lilypond</p>
+      <div class="row">
+        <div class="col-lg-7">
+          <p>What is counterpoint and why does it make a good candidate for using code to generate music?</p>
+          <p>Counterpoint is a specific style of music, where one melody is generated based on the note that came
+            before,
+            using specific rules. This means that if you can write a melody, the program can write a counterpoint to go
+            along with it. </p>
+          <img class="img-fluid rounded" src="../../images/musicgenerator/image1.png" alt="Counterpoint textbook">
+          <p>These images are from Burstein, L. Poundie., and Joseph Nathan. Straus. <em>Concise Introduction to Tonal
+              Harmony.</em>
+            W.W. Norton, 2016. The top image demonstrates a counterpoint melody, and the numbers represent the intervals
+            between the notes. The bottom image shows some of the rules for what counterpoint melodies cannot do.
+          </p>
+          <p>What were the requirements and challenges for this project?</p>
+          <ul class="list-unstyled">
+            <li>Writing Music:
+              <ul>
+                <li>Translating music theory into code</li>
+                <li>Saving music notes</li>
+                <li>Using logic to check for errors</li>
+                <li>Deciding which part of the program does what</li>
+              </ul>
+            </li>
+            <li>Exporting sheet music
+              <ul>
+                <li>Understanding basic music rules</li>
+                <li>Integrating with LilyPond</li>
+                <li>Exporting different lengths</li>
+                <li>Exporting in different keys</li>
+                <li>Exporting with different time signatures</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-        <li>Exporting sheet music
-          <ul>
-            <li>Understanding basic music rules</li>
-            <li>Integrating with LilyPond</li>
-            <li>Exporting different lengths</li>
-            <li>Exporting in different keys</li>
-            <li>Exporting with different time signatures</li>
+          <p>This program was written in C++, and was designed to export text that fit the .ly file format. Here is the
+            class hierarchy diagram.</p>
+          <img class="img-fluid rounded" src="../../images/musicgenerator/image2.png" alt="Class diagram">
+          <p>The goal for this project is to build a program that generates correct two-voice counterpoint. <br>
+            This project has four distinct parts: a note class, a class/function that combines all the rules, classes of
+            rules, and a class/function that outputs a .ly file.
+          </p>
+          <ul class="list-unstyled">
+            <li>Key Features
+              <ul>
+                <li>User chooses length, time signature, and species type</li>
+                <li>Follows all the rules for counterpoint</li>
+                <li>Outputs a LilyPond file with the generated music</li>
+              </ul>
+            </li>
+            <li>Assumptions
+              <ul>
+                <li>The users are good actors</li>
+                <li>The user will not want to write counterpoint in a minor key</li>
+                <li>The user cannot choose what specific notes they want</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-      <p>This program was written in C++, and was designed to export text that fit the .ly file format. Here is the
-        class hierarchy diagram.</p>
-      <img class="img-fluid rounded" src="../../images/musicgenerator/image2.png" alt="Class diagram">
-      <p>The goal for this project is to build a program that generates correct two-voice counterpoint. <br>
-        This project has four distinct parts: a note class, a class/function that combines all the rules, classes of
-        rules, and a class/function that outputs a .ly file.
-      </p>
-      <ul class="list-unstyled">
-        <li>Key Features
-          <ul>
-            <li>User chooses length, time signature, and species type</li>
-            <li>Follows all the rules for counterpoint</li>
-            <li>Outputs a LilyPond file with the generated music</li>
-          </ul>
-        </li>
-        <li>Assumptions
-          <ul>
-            <li>The users are good actors</li>
-            <li>The user will not want to write counterpoint in a minor key</li>
-            <li>The user cannot choose what specific notes they want</li>
-          </ul>
-        </li>
-      </ul>
-      <p>Note: Caleb N. and I worked on this project together.<br>
-        The code still runs, though there are now build errors. I ran it, and this is what the program looked like:</p>
-      <img class="img-fluid rounded" src="../../images/musicgenerator/image3.png" alt="Green computer text">
-      <p>It created a file, which, once I found it, imports into LilyPond correctly and plays. You can copy the
-        outputted text and put it into hacklily.org (also linked below) to see the sheet music. I generated the first
-        two phrases in style 0, then in style 1, then style 2, then finally style 0 again.
-        <br>Here is the first bit of the output:
-      </p>
-      <img class="img-fluid rounded" src="../../images/musicgenerator/image4.png" alt="Sheet music">
-      <p>I am very impressed that it still runs. It looks like there are some notes for which the logic may be wrong,
-        given the large jumps up and down occasionally, and when I listened to it I heard at least one major second,
-        which I don't think should be there (the last note in measure five). Still, I haven't looked at this code in
-        three years, and I'm kinda impressed with my past self. What a cool project xD <br>
-        I uploaded all the project files to <a href="https://github.com/emdashii/counterpoint_generator"
-          class="link-dark text-decoration-none">github</a>, as they were being hosted somewhere else, so at least I'll
-        have a
-        copy of the code.
-      </p>
-      <div class="content">
-        <h2 class="mt-5">music generated by the program</h2>
-        <a href="program_output6.1.2022.txt" target="_blank" rel="noopener noreferrer"
-          class="link-dark text-decoration-none">
-          <p>outputted .txt file</p>
-        </a>
-      </div>
-      <div class="content">
-        <h2 class="mt-5">some counterpoint I wrote</h2>
-        <a href="Project1.final.pdf" target="_blank" rel="noopener noreferrer" class="link-dark text-decoration-none">
-          <p>sheetmusic pdf</p>
-        </a>
-        <a href="Project1.final.ly" target="_blank" rel="noopener noreferrer" class="link-dark text-decoration-none">
-          <p>the corresponding .ly file</p>
-        </a>
-      </div>
-      <div class="content">
-        <h2 class="mt-5">links</h2>
-        <a href="https://www.hacklily.org/" target="_blank" rel="noopener noreferrer"
-          class="link-dark text-decoration-none">
-          <p>preview .ly files online (and listen to them, in the wrong key)</p>
-        </a>
-        <a href="http://lilypond.org/" target="_blank" rel="noopener noreferrer" class="link-dark text-decoration-none">
-          <p>main lilypond site</p>
-        </a>
-        <a href="https://www.mutopiaproject.org/" target="_blank" rel="noopener noreferrer"
-          class="link-dark text-decoration-none">
-          <p>free classical sheetmusic with .ly format available</p>
-        </a>
-        <a href="https://frescobaldi.org/" target="_blank" rel="noopener noreferrer"
-          class="link-dark text-decoration-none">
-          <p>downloadeable lilypond editor</p>
-        </a>
-        <br><br><br><br>
+          <p>Note: Caleb N. and I worked on this project together.<br>
+            The code still runs, though there are now build errors. I ran it, and this is what the program looked like:
+          </p>
+          <img class="img-fluid rounded" src="../../images/musicgenerator/image3.png" alt="Green computer text">
+          <p>It created a file, which, once I found it, imports into LilyPond correctly and plays. You can copy the
+            outputted text and put it into hacklily.org (also linked below) to see the sheet music. I generated the
+            first
+            two phrases in style 0, then in style 1, then style 2, then finally style 0 again.
+            <br>Here is the first bit of the output:
+          </p>
+          <img class="img-fluid rounded" src="../../images/musicgenerator/image4.png" alt="Sheet music">
+          <p>I am very impressed that it still runs. It looks like there are some notes for which the logic may be
+            wrong,
+            given the large jumps up and down occasionally, and when I listened to it I heard at least one major second,
+            which I don't think should be there (the last note in measure five). Still, I haven't looked at this code in
+            three years, and I'm kinda impressed with my past self. What a cool project xD <br>
+            I uploaded all the project files to <a href="https://github.com/emdashii/counterpoint_generator"
+              class="link-dark text-decoration-none">github</a>, as they were being hosted somewhere else, so at least
+            I'll
+            have a
+            copy of the code.
+          </p>
+          <div class="content">
+            <h2 class="mt-5">music generated by the program</h2>
+            <a href="program_output6.1.2022.txt" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>outputted .txt file</p>
+            </a>
+          </div>
+          <div class="content">
+            <h2 class="mt-5">some counterpoint I wrote</h2>
+            <a href="Project1.final.pdf" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>sheetmusic pdf</p>
+            </a>
+            <a href="Project1.final.ly" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>the corresponding .ly file</p>
+            </a>
+          </div>
+          <div class="content">
+            <h2 class="mt-5">links</h2>
+            <a href="https://www.hacklily.org/" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>preview .ly files online (and listen to them, in the wrong key)</p>
+            </a>
+            <a href="http://lilypond.org/" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>main lilypond site</p>
+            </a>
+            <a href="https://www.mutopiaproject.org/" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>free classical sheetmusic with .ly format available</p>
+            </a>
+            <a href="https://frescobaldi.org/" target="_blank" rel="noopener noreferrer"
+              class="link-dark text-decoration-none">
+              <p>downloadeable lilypond editor</p>
+            </a>
+            <br><br><br><br>
+          </div>
+        </div>
+        <div class="col-lg-5"></div>
       </div>
     </div>
   </main>
