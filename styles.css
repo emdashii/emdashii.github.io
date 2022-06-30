@@ -2,32 +2,11 @@ main {
   background-image: linear-gradient(110deg, #2E6085 0%, #B4CEE0 100%)
 }
 
-/* Link definitions */
-/*
-a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: gray;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: gray;
-  background-color: transparent;
-  text-decoration: underline;
-}
-*/
+p { 
+  line-height: 1.75em;  
+  font-size: 18px;
+  text-indent: 50px;
+} 
 
 iframe {
   border: none;
