@@ -1,12 +1,16 @@
-main {
-  background-image: linear-gradient(110deg, #2E6085 0%, #B4CEE0 100%)
+body {
+  background-image: linear-gradient(110deg, #2E6085 0%, #B4CEE0 100%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-p { 
-  line-height: 1.75em;  
+p {
+  line-height: 1.75em;
   font-size: 18px;
   text-indent: 50px;
-} 
+}
 
 iframe {
   border: none;
@@ -17,5 +21,7 @@ iframe {
 
 /* for rounded iframe corners */
 .test {
-  border-radius: 10px; width: 100%; overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
 }
