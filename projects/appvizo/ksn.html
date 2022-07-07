@@ -31,8 +31,66 @@
     <div class="container">
       <h1 class="mt-5">Project 2</h1>
       <p class="lead">wrote javascript scripts to edit servicenow records</p>
-      <br><br><br><br>
-    </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <p><b>tl;dr</b> I wrote lots of JavaScript to update ServiceNow's database.</p>
+          <h4>Project Overview:</h4>
+          <p>
+            ServiceNow is a behemoth platform. They provide templates to create enterprise apps, mostly for detailing
+            organizations. AppVizo was contracted to build a networking app. This app tracks and details people, events,
+            equipment, and connections between everything. It provides a detailed picture of the organization, so if
+            something goes wrong, a user can find the problem and fix it easily. It tracks the status of networking
+            equipment, and the connections between different pieces of equipment.
+          </p>
+          <p>As part of building this application on the ServiceNow platform, we put in dummy data, so that the client
+            can see what it would look like if they were using the application. This dummy data included multiple sites,
+            each of which consisted of buildings, which contain rooms (specifically server rooms), which contain racks,
+            which contain networking equipment. Every server and router communicates with at least one piece of the
+            network. Each is powered redundantly. All this is modeled in the ServiceNow app.
+          </p>
+        </div>
+        <div class="col-lg-5"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <h4>What I did:</h4>
+          <p>
+            A lot of what I did involved entering data. ServiceNow provides a couple of ways to enter data. One is to
+            format an excel document to be precisely the way they will recognize it, and then upload it. This way,
+            unfortunately, does not allow for any connections between different pieces of data. So instead, ServiceNow
+            has an Xplore page, where you can write JavaScript (in ES5) that can access and update tables in their
+            database. With this method, you can call up two different tables, and find specific items in each to
+            reference in a third table.
+          </p>
+          <p>
+            For example, say you have a router and a server that are linked. You could search the router table, the
+            server table, and then link them in the CMDB, which is a specific third table. In the linking, you can
+            specify which port and IP address each uses. That way, if something goes wrong with the server, you can
+            easily look up where it gets its data, and find fixes easier.
+          </p>
+          <p>With Javascript, I have probably made over five thousand records/changes to records in AppVizo's ServiceNow
+            developer instance. Some of these were creating records from scratch and generating random data. Some of
+            these, the data was already generated, and I had to enter it in a way where every record connected to the
+            correct thing.
+          </p>
+          <h4 class="mt-5">Skills demonstrated:</h4>
+          <ul class="list-unstyled">
+            <li>
+              <ul>
+                <li>Detailed data entry</li>
+                <li>Understanding a complex network</li>
+                <li>ServiceNow server calls using GlideRecords</li>
+                <li>Referencing different types of elements using JavaScript</li>
+                <li>Code base: JavaScript ES5</li>
+              </ul>
+            </li>
+          </ul>
+          <br><br><br><br>
+        </div>
+        <div class="col-lg-5">
+          <img class="img-fluid rounded" src="../../images/AppVizoImages/xplore.png" alt="Xplore">
+        </div>
+      </div>
     </div>
   </main>
   <!-- Footer -->
