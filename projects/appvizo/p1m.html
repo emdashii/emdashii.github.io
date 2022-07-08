@@ -31,8 +31,48 @@
     <div class="container">
       <h1 class="mt-5">Project 3</h1>
       <p class="lead">refactored a clients python code</p>
+      <div class="row">
+        <div class="col-lg-7">
+          <h4>Project Overview:</h4>
+          <p>AppVizo had previously written a webscraper for this client. It scraped a website, edited the returned
+            data, and then outputted a csv file. This ran daily on a server. The client added functionality, scraping
+            multiple other websites. This added complexity, until it was difficult to tell what part of the program did
+            what. There were multiple files hundreds of lines of code long. Some of them were redundant, but it was
+            unclear what was actually used and important.</p>
+          <p>The client came back to AppVizo and asked for additional functionality, scraping another website, as well
+            as combining all the different scrapes into a single file. (Each one was outputting a separate csv file.)
+          </p>
+          <h4>What I did:</h4>
+          <p>I read through all the current code and figured out what each piece did, and which pieces were copies of
+            functions from other files. I added a
+          <pre>def main()</pre> and<br><br>
+          <pre>if __name__ == "__main__": 
+    main()</pre> to each file, and then called the relevant ones from a main.py
+          file. This added clarity to what ran when.</p>
+          <p>One of the other programmers added SQLite to the program. After that was done, I added that functionality
+            to all the other files, so that everything outputted to a SQLite file, which at the end put out a single csv
+            file. This helped the code to run faster, and made it easier to debug if any of the web scrapes failed. It
+            also helped to format each scrape into a similar data format, which the client needed.</p>
+          <p><b>tl;dr</b> Refactored a client's python code and added additional functionality using pandas and SQLite.
+          </p>
+          <h4 class="mt-5">Skills demonstrated:</h4>
+          <ul class="list-unstyled">
+            <li>
+              <ul>
+                <li>Managing complexity as projects get bigger and expand in scope</li>
+                <li>Refactoring an existing code base</li>
+                <li>Python pandas and SQLite integration</li>
+                <li>Working with a client when what they ask for requires more work than they realize</li>
+                <li>Working with other programmers, integrating other people's code</li>
+                <li>Git: merging, branches, and pull/push</li>
+                <li>Code base: Python</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-5"></div>
+      </div>
       <br><br><br><br>
-    </div>
     </div>
   </main>
   <!-- Footer -->
