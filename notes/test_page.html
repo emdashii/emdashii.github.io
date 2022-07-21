@@ -51,9 +51,10 @@
         </div>
         <div class="col-lg-5">
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis assumenda ad excepturi quos, tempore
-            sint consequatur <pre>voluptatibus          praesentium 
+            sint consequatur
+          <pre>voluptatibus          praesentium 
               blanditiis inventore fugiat </pre>exercitationem expedita aperiam quis
-            dolore ut, quod molestias dolor!</p>
+          dolore ut, quod molestias dolor!</p>
         </div>
       </div>
       <div class="test">
@@ -78,13 +79,81 @@
       <br>https://codepen.io/micjamking/pen/QdojLz
       <br>https://www.w3schools.com/css/css3_flexbox_items.asp
       </p>
-      <p>
-        more <br>text <br>to <br>try <br>to <br>make <br>the <br>page <br>longer<br><br><br><br>
-      </p>
       <div class="row">
         <div class="col-lg-7"></div>
         <div class="col-lg-5"></div>
       </div>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+        <select class="form-select" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <select class="form-select" id="inputGroupSelect02">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label class="input-group-text" for="inputGroupSelect02">Options</label>
+      </div>
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+      </div>
+      <p>Clear the input field when you click on the button:</p>
+      <button onclick="document.getElementById('myInput').value = ''">Clear input field</button>
+      <input type="text" value="Blabla" id="myInput">
+      <form>
+        <fieldset disabled>
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">Disabled input</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+      </form>
+      <p>
+        more <br>text <br>to <br>try <br>to <br>make <br>the <br>page <br>longer<br><br><br><br>
+      </p>
     </div>
   </main>
   <!-- Footer -->
