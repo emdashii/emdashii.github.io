@@ -33,19 +33,25 @@
             <p class="lead">good luck!</p>
             <div class="row">
                 <div class="col-lg-7">
+                    <div class="mb-3" id="p1">
+                        <p>This is like a game. As you type, the output will be different from the letter typed.
+                            Try to follow the instructions. :P</p>
+                    </div>
                     <form autocomplete="off" onsubmit="onFormSubmit()">
-                        <div class="mb-3">
-                            <label for="text1" class="form-label">Email address</label>
-                            <input type="text" class="form-control" id="text1" aria-describedby="text1Help">
-                            <div id="text1Help" class="form-text">Type: things are good</div>
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-primary" id="clearText1" onclick="resetButton('text1')">Reset</button>
-                            <button class="btn btn-primary" id="clearText1" onclick="onSuccess()">Success</button>
-                        </div>
                         <div class="input-group">
                             <span class="input-group-text">Type: test</span>
-                            <textarea class="form-control" aria-label="With textarea" id="text2" onkeydown="confusion(event)" onkeyup="confused(event)"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" id="textTest1"
+                            onkeydown="confusion(event)" onkeyup="confused(event)"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="text1" class="form-label"></label>
+                            <input type="text" class="form-control" id="textTest2" aria-describedby="text1Help" disabled="false" onkeyup="confuzzled(event)">
+                            <div id="textTest2Help" class="form-text">Unlock Textbox</div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" id="clearText1"
+                                onclick="resetButton('textTest2')">Reset</button>
+                            <button class="btn btn-primary" id="clearText1" onclick="onSuccess('Nice job. You clicked a button.')">Success</button>
                         </div>
                         <br>
                         <div class="mb-3">
