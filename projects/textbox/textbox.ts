@@ -1,27 +1,32 @@
 var count = 0;
 var testing = true;
-var testingConfusion = true;
+var testingConfusion = false;
 var testingSubstitutionCypher = false;
-function onFormSubmit(e) {
+
+function onFormSubmit(e: any): void {
     event.preventDefault();
     resetForm();
 }
+
 //Reset the data
-function resetForm() {
-    var textTest1 = document.querySelector('textTest1');
-    var textTest2 = document.querySelector('textTest2');
+function resetForm(): void {
+    var textTest1 = document.querySelector<HTMLElement>('textTest1');
+    var textTest2 = document.querySelector<HTMLElement>('textTest2');
     textTest1.innerText = '';
     textTest2.innerText = '';
 }
-function resetButton(toReset) {
-    var toClear = document.querySelector(toReset);
+
+function resetButton(toReset: string): void {
+    var toClear = document.querySelector<HTMLElement>(toReset);
     toClear.innerText = '';
 }
-function onSuccess(text) {
+
+function onSuccess(text: string): void {
     alert(text);
 }
-function confused(evt) {
-    var textbox = document.querySelector('textTest1');
+
+function confused(evt: any): boolean {
+    var textbox = document.querySelector<HTMLElement>('textTest1');
     if (testingConfusion) {
         console.log(evt);
         console.log(textbox);
@@ -34,9 +39,9 @@ function confused(evt) {
     return false;
 }
 // <input onkeypress="javascript:return false;" id="txtChar" onkeydown="javascript:return displayKeyCode(event)" type="text" name="txtChar">
-function confusion(evt) {
-    var textbox = document.querySelector('textTest1');
-    var textTest2 = document.querySelector('textTest2');
+function confusion(evt: any): boolean {
+    var textbox = document.querySelector<HTMLElement>('textTest1');
+    var textTest2 = document.querySelector<HTMLElement>('textTest2');
     if (testingConfusion) {
         console.log(evt);
         console.log(textbox);
@@ -49,8 +54,9 @@ function confusion(evt) {
     }
     return false;
 }
-function confuzzled(evt) {
-    var textTest2 = document.querySelector('textTest2');
+
+function confuzzled(evt: any): boolean {
+    var textTest2 = document.querySelector<HTMLElement>('textTest2');
     if (testing) {
         console.log(evt);
         console.log(textTest2);
@@ -64,14 +70,16 @@ function confuzzled(evt) {
     textTest2.innerText = textBox.toString();
     return false;
 }
-function isLetter(input) {
+
+function isLetter(input: number): boolean {
     var boolToReturn = false;
     if (input - 65 < 26 && input - 65 >= 0) {
         boolToReturn = true;
     }
     return boolToReturn;
 }
-function substitutionCypher(num, letterChar) {
+
+function substitutionCypher(num: number, letterChar: number): string {
     var test = (num + letterChar - 65) % 26;
     var toReturn = String.fromCharCode(test + 65); // 0-25
     if (testingSubstitutionCypher) {
@@ -81,15 +89,19 @@ function substitutionCypher(num, letterChar) {
     }
     return toReturn.toLowerCase();
 }
-function generateRealisticWord(length) {
+
+function generateRealisticWord(length: number): string {
     var result = '';
-    var characters = 'eeeeeeeeeeeeetttttttttaaaaaaaaooooooonnnnnnniiiiiiihhhhhhssssssrrrrrrlllldddduuucccmmmwwyyffggppbbvk'; // no j, x, q, or z
+    var characters =
+        'eeeeeeeeeeeeetttttttttaaaaaaaaooooooonnnnnnniiiiiiihhhhhhssssssrrrrrrlllldddduuucccmmmwwyyffggppbbvk'; // no j, x, q, or z
     for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
+        result += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+        );
     }
     return result;
 }
-function generateString(length) {
+function generateString(length: number): string {
     // generates a string using all characters equally
     var result = '';
     for (var i = 0; i < length; i++) {
@@ -97,26 +109,26 @@ function generateString(length) {
     }
     return result.toLowerCase();
 }
-function generateSentence(numWords) {
+function generateSentence(numWords: number): string {
     var sentence = '';
     for (var i = 0; i < numWords; i++) {
         sentence += generateString(randNum(8)) + ' ';
     }
     return sentence.charAt(0).toUpperCase() + sentence.slice(1).trim() + '.';
 }
-function generateParagraph(numSentences) {
+function generateParagraph(numSentences: number): string {
     var paragraph = '';
     for (var i = 0; i < numSentences; i++) {
         paragraph += generateSentence(randNum(11)) + ' ';
     }
     return paragraph.trim();
 }
-function randNum(upperBound) {
+function randNum(upperBound: number): number {
     return Math.floor(Math.random() * upperBound + 1);
 }
-function setCharAt(str, index, chr) {
-    if (index > str.length - 1)
-        return str;
+function setCharAt(str: string, index: number, chr: string): string {
+    if (index > str.length - 1) return str;
     return str.substring(0, index) + chr + str.substring(index + 1);
 }
+
 // https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "watch": true
+    // "outDir": "out"      // specifies the output directory
+    // add **/*.js: { "when": "$(basename).ts" } as a workspace setting to the settings.json file under files.exclude
+  }
+}
