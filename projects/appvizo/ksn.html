@@ -1,104 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Info -->
+    <title>Project 2</title>
+    <meta name="author" content="Elliott Claus" />
+    <meta name="description" content="Elliott's Webiste" />
+    <meta name="keywords" content="Resume, Projects, Github, Programming" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <!-- References -->
+    <link rel="stylesheet" href="../../styles.css" />
+    <script
+      src="../../components/projectsHeader.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="../../components/footer.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  </head>
 
-<head>
-  <!-- Info -->
-  <title>Project 2</title>
-  <meta name="author" content="Elliott Claus">
-  <meta name="description" content="Elliott's Webiste">
-  <meta name="keywords" content="Resume, Projects, Github, Programming">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <!-- References -->
-  <link rel="stylesheet" href="../../styles.css">
-  <script src="../../components/projectsHeader.js" type="text/javascript" defer></script>
-  <script src="../../components/footer.js" type="text/javascript" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../../images/favicon/site.webmanifest">
-</head>
-
-<body class="d-flex flex-column h-100 vsc-initialized">
-  <!-- Begin page content -->
-  <main class="flex-shrink-0">
-    <!-- Navbar -->
-    <projects-header></projects-header>
-    <!-- Main -->
-    <div class="container">
-      <h1 class="mt-5">Project 2</h1>
-      <p class="lead">wrote javascript scripts to edit servicenow records</p>
-      <div class="row">
-        <div class="col-lg-7">
-          <h4>Project Overview:</h4>
-          <p>
-            ServiceNow is a behemoth platform. They provide templates to create enterprise apps, mostly for detailing
-            organizations. AppVizo was contracted to build a networking app. This app tracks and details people, events,
-            equipment, and connections between everything. It provides a detailed picture of the organization, so if
-            something goes wrong, a user can find the problem and fix it easily. It tracks the status of networking
-            equipment, and the connections between different pieces of equipment.
-          </p>
-          <p>As part of building this application on the ServiceNow platform, we put in dummy data, so that the client
-            can see what it would look like if they were using the application. This dummy data included multiple sites,
-            each of which consisted of buildings, which contain rooms (specifically server rooms), which contain racks,
-            which contain networking equipment. Every server and router communicates with at least one piece of the
-            network. Each is powered redundantly. All this is modeled in the ServiceNow app.
-          </p>
+  <body class="d-flex flex-column h-100 vsc-initialized">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <!-- Navbar -->
+      <projects-header></projects-header>
+      <!-- Main -->
+      <div class="container">
+        <h1 class="mt-5">Project 2</h1>
+        <p class="lead">wrote javascript scripts to edit servicenow records</p>
+        <div class="row">
+          <div class="col-lg-7">
+            <h4>Project Overview:</h4>
+            <p>
+              ServiceNow is a behemoth platform. They provide templates to
+              create enterprise apps, mostly for detailing organizations.
+              AppVizo was contracted to build a networking app. This app tracks
+              and details people, events, equipment, and connections between
+              everything. It provides a detailed picture of the organization, so
+              if something goes wrong, a user can find the problem and fix it
+              easily. It tracks the status of networking equipment, and the
+              connections between different pieces of equipment.
+            </p>
+            <p>
+              As part of building this application on the ServiceNow platform,
+              we put in dummy data, so that the client can see what it would
+              look like if they were using the application. This dummy data
+              included multiple sites, each of which consisted of buildings,
+              which contain rooms (specifically server rooms), which contain
+              racks, which contain networking equipment. Every server and router
+              communicates with at least one piece of the network. Each is
+              powered redundantly. All this is modeled in the ServiceNow app.
+            </p>
+          </div>
+          <div class="col-lg-5"></div>
         </div>
-        <div class="col-lg-5"></div>
+        <div class="row">
+          <div class="col-lg-7">
+            <h4>What I did:</h4>
+            <p>
+              A lot of what I did involved entering data. ServiceNow provides a
+              couple of ways to enter data. One is to format an excel document
+              to be precisely the way they will recognize it, and then upload
+              it. This way, unfortunately, does not allow for any connections
+              between different pieces of data. So instead, ServiceNow has an
+              Xplore page, where you can write JavaScript (in ES5) that can
+              access and update tables in their database. With this method, you
+              can call up two different tables, and find specific items in each
+              to reference in a third table.
+            </p>
+            <p>
+              For example, say you have a router and a server that are linked.
+              You could search the router table, the server table, and then link
+              them in the CMDB, which is a specific third table. In the linking,
+              you can specify which port and IP address each uses. That way, if
+              something goes wrong with the server, you can easily look up where
+              it gets its data, and find fixes easier.
+            </p>
+            <p>
+              With Javascript, I have probably made over five thousand
+              records/changes to records in AppVizo's ServiceNow developer
+              instance. Some of these were creating records from scratch and
+              generating random data. Some of these, the data was already
+              generated, and I had to enter it in a way where every record
+              connected to the correct thing.
+            </p>
+            <p>
+              <b>tl;dr</b> I wrote lots of JavaScript to update ServiceNow's
+              database.
+            </p>
+            <h4 class="mt-5">Skills demonstrated:</h4>
+            <ul class="list-unstyled">
+              <li>
+                <ul>
+                  <li>Detailed data entry</li>
+                  <li>Understanding a complex network</li>
+                  <li>ServiceNow server calls using GlideRecords</li>
+                  <li>
+                    Referencing different types of elements using JavaScript
+                  </li>
+                  <li>Code base: JavaScript ES5</li>
+                </ul>
+              </li>
+            </ul>
+            <br /><br /><br /><br />
+          </div>
+          <div class="col-lg-5">
+            <img
+              class="img-fluid rounded"
+              src="../../images/AppVizoImages/xplore.png"
+              alt="Xplore"
+            />
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-lg-7">
-          <h4>What I did:</h4>
-          <p>
-            A lot of what I did involved entering data. ServiceNow provides a couple of ways to enter data. One is to
-            format an excel document to be precisely the way they will recognize it, and then upload it. This way,
-            unfortunately, does not allow for any connections between different pieces of data. So instead, ServiceNow
-            has an Xplore page, where you can write JavaScript (in ES5) that can access and update tables in their
-            database. With this method, you can call up two different tables, and find specific items in each to
-            reference in a third table.
-          </p>
-          <p>
-            For example, say you have a router and a server that are linked. You could search the router table, the
-            server table, and then link them in the CMDB, which is a specific third table. In the linking, you can
-            specify which port and IP address each uses. That way, if something goes wrong with the server, you can
-            easily look up where it gets its data, and find fixes easier.
-          </p>
-          <p>With Javascript, I have probably made over five thousand records/changes to records in AppVizo's ServiceNow
-            developer instance. Some of these were creating records from scratch and generating random data. Some of
-            these, the data was already generated, and I had to enter it in a way where every record connected to the
-            correct thing.
-          </p>
-          <p><b>tl;dr</b> I wrote lots of JavaScript to update ServiceNow's database.</p>
-          <h4 class="mt-5">Skills demonstrated:</h4>
-          <ul class="list-unstyled">
-            <li>
-              <ul>
-                <li>Detailed data entry</li>
-                <li>Understanding a complex network</li>
-                <li>ServiceNow server calls using GlideRecords</li>
-                <li>Referencing different types of elements using JavaScript</li>
-                <li>Code base: JavaScript ES5</li>
-              </ul>
-            </li>
-          </ul>
-          <br><br><br><br>
-        </div>
-        <div class="col-lg-5">
-          <img class="img-fluid rounded" src="../../images/AppVizoImages/xplore.png" alt="Xplore">
-        </div>
-      </div>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer-component></footer-component>
-  <!-- Necessary for dropdowns -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-</body>
-
+    </main>
+    <!-- Footer -->
+    <footer-component></footer-component>
+    <!-- Necessary for dropdowns -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,109 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Info -->
+    <title>Mazzaella</title>
+    <meta name="author" content="Elliott Claus" />
+    <meta name="description" content="Elliott's Webiste" />
+    <meta name="keywords" content="Resume, Projects, Github, Programming" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <!-- References -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+  </head>
 
-<head>
-  <!-- Info -->
-  <title>Mazzaella</title>
-  <meta name="author" content="Elliott Claus">
-  <meta name="description" content="Elliott's Webiste">
-  <meta name="keywords" content="Resume, Projects, Github, Programming">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <!-- References -->
-  <link rel="stylesheet" href="styles.css">
-  <script src="components/header.js" type="text/javascript" defer></script>
-  <script src="components/footer.js" type="text/javascript" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon/site.webmanifest">
-</head>
-
-<body class="d-flex flex-column h-100 vsc-initialized">
-  <!-- Begin page content -->
-  <main class="flex-shrink-0">
-    <!-- Navbar -->
-    <header-component></header-component>
-    <!-- Main -->
-    <div class="container">
-      <div class="bg-light bg-gradient rounded bg-opacity-25">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-              aria-label="Slide 1" aria-current="true"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"
-              class=""></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"
-              class=""></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"
-              class=""></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"
-              class=""></button>
+  <body class="d-flex flex-column h-100 vsc-initialized">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <!-- Navbar -->
+      <header-component></header-component>
+      <!-- Main -->
+      <div class="container">
+        <div class="bg-light bg-gradient rounded bg-opacity-25">
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                class="active"
+                aria-label="Slide 1"
+                aria-current="true"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+                class=""
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+                class=""
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+                class=""
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+                class=""
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/backgrounds/thetree.jpg"
+                  class="d-block w-100"
+                  alt="Lake in Scotland"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Junior Developer at AppVizo</h5>
+                  <p>Projects used JavaScript, Python, and C#</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/backgrounds/coldlake.jpg"
+                  class="d-block w-100"
+                  alt="Lake in Washington"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Senior Capstone Project</h5>
+                  <p>Design, Build, and Test a Photometer</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/backgrounds/abovefog.jpg"
+                  class="d-block w-100"
+                  alt="Fog between Mountains"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Sheet Music Generator</h5>
+                  <p>Writes counterpoint music using C++ and LilyPond</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/backgrounds/outhouse.jpg"
+                  class="d-block w-100"
+                  alt="Lake in Utah"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Split Keyboard Keymap</h5>
+                  <p>Designing a keymap using QMK</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/backgrounds/scotland.jpg"
+                  class="d-block w-100"
+                  alt="The Tree"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Mazzaella</h5>
+                  <p>Writing a website using Bootstrap</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="images/backgrounds/thetree.jpg" class="d-block w-100" alt="Lake in Scotland" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Junior Developer at AppVizo</h5>
-                <p>Projects used JavaScript, Python, and C#</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="images/backgrounds/coldlake.jpg" class="d-block w-100" alt="Lake in Washington" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Senior Capstone Project</h5>
-                <p>Design, Build, and Test a Photometer</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="images/backgrounds/abovefog.jpg" class="d-block w-100" alt="Fog between Mountains" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Sheet Music Generator</h5>
-                <p>Writes counterpoint music using C++ and LilyPond</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="images/backgrounds/outhouse.jpg" class="d-block w-100" alt="Lake in Utah" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Split Keyboard Keymap</h5>
-                <p>Designing a keymap using QMK</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="images/backgrounds/scotland.jpg" class="d-block w-100" alt="The Tree" />
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Mazzaella</h5>
-                <p>Writing a website using Bootstrap</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <h1 class="mt-5" style="text-align: center; font-size: 3vw">
+            Mazzaella
+          </h1>
+          <p class="lead" style="text-align: center; font-size: 2vw">
+            Elliott's Portfolio Website
+          </p>
+          <br />
         </div>
-        <h1 class="mt-5" style="text-align:center;font-size:3vw">Mazzaella</h1>
-        <p class="lead" style="text-align:center;font-size:2vw">Elliott's Portfolio Website</p><br>
+
+        <br /><br /><br />
       </div>
-
-      <br><br><br>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer-component></footer-component>
-  <!-- Necessary for dropdowns -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-</body>
-
+    </main>
+    <!-- Footer -->
+    <footer-component></footer-component>
+    <!-- Necessary for dropdowns -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

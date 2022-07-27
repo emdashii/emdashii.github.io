@@ -1,17 +1,17 @@
 var selectedRow = '';
 
 function onFormSubmit(e) {
-	event.preventDefault();
-        var formData = readFormData();
-        if (selectedRow == ''){
-            // checkInputIsNumber(formData[3]);
-            insertNewRecord(formData);
-            console.info(formData);
-		}
-        else{
-            updateRecord(formData);
-		}
-        resetForm();    
+    event.preventDefault();
+    var formData = readFormData();
+    if (selectedRow == '') {
+        // checkInputIsNumber(formData[3]);
+        insertNewRecord(formData);
+        console.info(formData);
+    }
+    else {
+        updateRecord(formData);
+    }
+    resetForm();
 }
 
 //Retrieve the data
@@ -30,17 +30,17 @@ function insertNewRecord(data) {
     var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
-		cell1.innerHTML = data.productCode;
+    cell1.innerHTML = data.productCode;
     cell2 = newRow.insertCell(1);
-		cell2.innerHTML = data.product;
+    cell2.innerHTML = data.product;
     cell3 = newRow.insertCell(2);
-		cell3.innerHTML = data.qty;
+    cell3.innerHTML = data.qty;
     cell4 = newRow.insertCell(3);
-		cell4.innerHTML = data.perPrice;
+    cell4.innerHTML = data.perPrice;
     cell5 = newRow.insertCell(4);
-        cell5.innerHTML = "$" + data.value;
+    cell5.innerHTML = "$" + data.value;
     cell6 = newRow.insertCell(5);
-        cell6.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+    cell6.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
 }
 
 //Edit the data
@@ -90,7 +90,7 @@ function onClear(td) {
     }
 }
 
-function calcPrice(x,y) {
+function calcPrice(x, y) {
     return Math.round(((x * y) + Number.EPSILON) * 100) / 100;
 }
 

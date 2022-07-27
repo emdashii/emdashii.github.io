@@ -1,122 +1,161 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Info -->
     <title>crud</title>
-    <meta name="author" content="Elliott Claus">
-    <meta name="description" content="Elliott's Webiste">
-    <meta name="keywords" content="Resume, Projects, Github, Programming">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta name="author" content="Elliott Claus" />
+    <meta name="description" content="Elliott's Webiste" />
+    <meta name="keywords" content="Resume, Projects, Github, Programming" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
     <!-- References -->
-    <link rel="stylesheet" href="../../styles.css">
-    <script src="../../components/projectsHeader.js" type="text/javascript" defer></script>
-    <script src="../../components/footer.js" type="text/javascript" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css" />
+    <script
+      src="../../components/projectsHeader.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="../../components/footer.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../images/favicon/site.webmanifest">
-</head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  </head>
 
-<body class="d-flex flex-column h-100 vsc-initialized">
+  <body class="d-flex flex-column h-100 vsc-initialized">
     <!-- Begin page content -->
     <main class="flex-shrink-0">
-        <!-- Navbar -->
-        <projects-header></projects-header>
-        <!-- Main -->
-        <div class="container-fluid">
-            <h1 class="mt-5" style="text-align:center;">crud app to learn</h1>
-            <p class="lead" style="text-align:center;text-indent: 0px;font-size: x-large;">html and javascript</p>
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="bg-light rounded table-responsive">
-                        <table class="table table-striped table-hover" id="storeList">
-                            <thead>
-                                <tr>
-                                    <th>Product Code</th>
-                                    <th>Product Name</th>
-                                    <th>Qty</th>
-                                    <th>Price</th>
-                                    <th>Value</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="bg-light rounded table-responsive">
-                        <table class="table table-striped table-hover">
-                            <form autocomplete="off" onsubmit="onFormSubmit()">
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <label for="productCode">Product Code</label>
-                                            <p class="text-center m-0"><input type="text" name="productCode"
-                                                    id="productCode"></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <label for="product">Product Name</label>
-                                            <p class="text-center m-0">
-                                                <input type="text" name="product" id="product">
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <label for="qty">Quantity</label>
-                                            <p class="text-center m-0">
-                                                <input type="number" name="qty" id="qty">
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <label for="perPrice">Price</label>
-                                            <p class="text-center m-0">
-                                                <input type="text" name="perPrice" id="perPrice">
-                                            </p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div>
-                                            <input type="submit" value="Submit">
-                                            <input type="reset" value="Reset">
-                                            <input type="button" value="Clear Table (doesn't work)">
-                                            <button onClick="onClear(this)">Clear (doesn't work)</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </form>
-                        </table>
-                    </div>
-                </div>
+      <!-- Navbar -->
+      <projects-header></projects-header>
+      <!-- Main -->
+      <div class="container-fluid">
+        <h1 class="mt-5" style="text-align: center">crud app to learn</h1>
+        <p
+          class="lead"
+          style="text-align: center; text-indent: 0px; font-size: x-large"
+        >
+          html and javascript
+        </p>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="bg-light rounded table-responsive">
+              <table class="table table-striped table-hover" id="storeList">
+                <thead>
+                  <tr>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="bg-light rounded table-responsive">
+              <table class="table table-striped table-hover">
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                  <tr>
+                    <td>
+                      <div>
+                        <label for="productCode">Product Code</label>
+                        <p class="text-center m-0">
+                          <input
+                            type="text"
+                            name="productCode"
+                            id="productCode"
+                          />
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <label for="product">Product Name</label>
+                        <p class="text-center m-0">
+                          <input type="text" name="product" id="product" />
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <label for="qty">Quantity</label>
+                        <p class="text-center m-0">
+                          <input type="number" name="qty" id="qty" />
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <label for="perPrice">Price</label>
+                        <p class="text-center m-0">
+                          <input type="text" name="perPrice" id="perPrice" />
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Reset" />
+                        <input
+                          type="button"
+                          value="Clear Table (doesn't work)"
+                        />
+                        <button onClick="onClear(this)">
+                          Clear (doesn't work)
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </form>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
     <!-- Footer -->
     <footer-component></footer-component>
     <!-- Scripts -->
     <script type="text/javascript" src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
