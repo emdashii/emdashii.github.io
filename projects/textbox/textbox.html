@@ -1,77 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- Info -->
+        <title>Textbox Test</title>
+        <meta name="author" content="Elliott Claus" />
+        <meta name="description" content="Elliott's Webiste" />
+        <meta name="keywords" content="Resume, Projects, Github, Programming" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <!-- References -->
+        <link rel="stylesheet" href="../../styles.css" />
+        <script
+            src="../../components/projectsHeader.js"
+            type="text/javascript"
+            defer
+        ></script>
+        <script
+            src="../../components/footer.js"
+            type="text/javascript"
+            defer
+        ></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../../images/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../../images/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../../images/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+    </head>
 
-<head>
-    <!-- Info -->
-    <title>Textbox Test</title>
-    <meta name="author" content="Elliott Claus">
-    <meta name="description" content="Elliott's Webiste">
-    <meta name="keywords" content="Resume, Projects, Github, Programming">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <!-- References -->
-    <link rel="stylesheet" href="../../styles.css">
-    <script src="../../components/projectsHeader.js" type="text/javascript" defer></script>
-    <script src="../../components/footer.js" type="text/javascript" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../images/favicon/site.webmanifest">
-</head>
-
-<body class="d-flex flex-column h-100 vsc-initialized">
-    <!-- Begin page content -->
-    <main class="flex-shrink-0">
-        <!-- Navbar -->
-        <projects-header></projects-header>
-        <!-- Main -->
-        <div class="container">
-            <h1 class="mt-5">Try typing in the textbox</h1>
-            <p class="lead">good luck!</p>
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="mb-3" id="p1">
-                        <p>This is like a game. As you type, the output will be different from the letter typed.
-                            Try to follow the instructions. :P</p>
+    <body class="d-flex flex-column h-100 vsc-initialized">
+        <!-- Begin page content -->
+        <main class="flex-shrink-0">
+            <!-- Navbar -->
+            <projects-header></projects-header>
+            <!-- Main -->
+            <div class="container">
+                <h1 class="mt-5">Try typing in the textbox</h1>
+                <p class="lead">good luck!</p>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="mb-3" id="p1">
+                            <p>
+                                This is like a game. As you type, the output
+                                will be different from the letter typed. Try to
+                                follow the instructions. :P
+                            </p>
+                        </div>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div class="input-group">
+                                <span class="input-group-text">Type: test</span>
+                                <textarea
+                                    class="form-control"
+                                    aria-label="With textarea"
+                                    id="textTest1"
+                                    onkeydown="lv1KeyDn(event)"
+                                    onkeyup="lv1KeyUp(event)"
+                                ></textarea>
+                            </div>
+                            <div class="input-group">
+                                <textarea
+                                    class="form-control"
+                                    aria-label="textTest2"
+                                    id="textTest2"
+                                    disabled="false"
+                                    onkeydown="lv2KeyDn(event)"
+                                    onkeyup="lv2KeyUp(event)"
+                                    onmouseover="lv2MouseOver(event)"
+                                ></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button
+                                    class="btn btn-primary"
+                                    id="clearText1"
+                                    onclick="resetButton('textTest2')"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Click to Reset the Text Test"
+                                >
+                                    Reset
+                                </button>
+                                <button
+                                    class="btn btn-primary"
+                                    id="clearText1"
+                                    onclick="onSuccess('You beat the text test! Well done')"
+                                >
+                                    Success
+                                </button>
+                            </div>
+                            <br />
+                            <div class="mb-3">
+                                <button
+                                    type="submit"
+                                    class="btn btn-secondary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="When you complete the challenge, this button will become available to you."
+                                >
+                                    Finished?
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <form autocomplete="off" onsubmit="onFormSubmit()">
-                        <div class="input-group">
-                            <span class="input-group-text">Type: test</span>
-                            <textarea class="form-control" aria-label="With textarea" id="textTest1"
-                            onkeydown="confusion(event)" onkeyup="confused(event)"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="text1" class="form-label"></label>
-                            <input type="text" class="form-control" id="textTest2" aria-describedby="text1Help" disabled="false" onkeyup="confuzzled(event)">
-                            <div id="textTest2Help" class="form-text">Unlock Textbox</div>
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-primary" id="clearText1"
-                                onclick="resetButton('textTest2')">Reset</button>
-                            <button class="btn btn-primary" id="clearText1" onclick="onSuccess('Nice job. You clicked a button.')">Success</button>
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Finished!</button>
-                        </div>
-                    </form>
+                    <div class="col-lg-5"></div>
                 </div>
-                <div class="col-lg-5">
-                </div>
+                <br /><br /><br /><br />
             </div>
-            <br><br><br><br>
-        </div>
-    </main>
-    <!-- Footer -->
-    <footer-component></footer-component>
-    <!-- Scripts -->
-    <script type="text/javascript" src="textbox.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-</body>
-
+        </main>
+        <!-- Footer -->
+        <footer-component></footer-component>
+        <!-- Scripts -->
+        <script type="text/javascript" src="textbox.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>

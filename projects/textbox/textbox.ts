@@ -1,6 +1,7 @@
 var count = 0;
-var testing = true;
-var testingConfusion = false;
+var testing = false;
+var testingLv1 = false;
+var testingLv2 = false;
 var testingSubstitutionCypher = false;
 
 function onFormSubmit(e: any): void {
@@ -10,64 +11,67 @@ function onFormSubmit(e: any): void {
 
 //Reset the data
 function resetForm(): void {
-    var textTest1 = document.querySelector<HTMLElement>('textTest1');
-    var textTest2 = document.querySelector<HTMLElement>('textTest2');
-    textTest1.innerText = '';
-    textTest2.innerText = '';
+    resetButton('textTest1');
+    resetButton('textTest2');
 }
 
 function resetButton(toReset: string): void {
-    var toClear = document.querySelector<HTMLElement>(toReset);
-    toClear.innerText = '';
+    var toClear = document.getElementById(toReset) as HTMLInputElement;
+    toClear.value = '';
 }
 
 function onSuccess(text: string): void {
     alert(text);
 }
 
-function confused(evt: any): boolean {
-    var textbox = document.querySelector<HTMLElement>('textTest1');
-    if (testingConfusion) {
+function lv1KeyUp(evt: any): boolean {
+    var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
+    if (testingLv1) {
         console.log(evt);
         console.log(textbox);
-        console.log(textbox.innerText);
+        console.log(textbox.value);
     }
-    if (textbox.innerText == 'test') {
+    if (textbox.value == 'test') {
         onSuccess('You completed the first tast. Now type: things are good');
         resetButton('textTest1');
     }
     return false;
 }
 // <input onkeypress="javascript:return false;" id="txtChar" onkeydown="javascript:return displayKeyCode(event)" type="text" name="txtChar">
-function confusion(evt: any): boolean {
-    var textbox = document.querySelector<HTMLElement>('textTest1');
-    var textTest2 = document.querySelector<HTMLElement>('textTest2');
-    if (testingConfusion) {
+function lv1KeyDn(evt: any): boolean {
+    var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
+    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
+    if (testingLv1) {
         console.log(evt);
         console.log(textbox);
-        console.log(textbox.innerText);
+        console.log(textbox.value);
     }
-    if (textbox.innerText == 'things are goo' && evt.key == 'd') {
-        textbox.innerText = 'are they really? x';
-        textTest2.innerText = 'now you can type here';
-        // textTest2.disabled = false;
+    if (textbox.value == 'things are goo' && evt.key == 'd') {
+        onSuccess('You have unlocked the second level. Continue by typing: ');
+        textbox.value = 'are they really? x';
+        textTest2.value = 'now you can type here';
+        textTest2.disabled = false;
     }
     return false;
 }
 
-function confuzzled(evt: any): boolean {
-    var textTest2 = document.querySelector<HTMLElement>('textTest2');
-    if (testing) {
+function lv2KeyUp(evt: any): boolean {
+    var textTest2 = document.getElementById('textTest2') as HTMLInputElement;
+    if (testingLv2) {
         console.log(evt);
         console.log(textTest2);
-        console.log(textTest2.innerText);
+        console.log(textTest2.value);
     }
     if (isLetter(evt.keyCode)) {
         count++;
-        var textBox = textTest2.innerText.slice(0, -1);
+        var textBox = textTest2.value.slice(0, -1);
         textBox += substitutionCypher(count % 26, evt.keyCode);
     }
-    textTest2.innerText = textBox.toString();
+    textTest2.value = textBox.toString();
+    return false;
+}
+
+function lv2MouseOver(event: any): boolean {
     return false;
 }
 
