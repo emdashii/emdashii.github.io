@@ -1,10 +1,10 @@
 var count = 0;
 var testing = false;
-var testingLv1 = false;
+var testingLv1 = true;
 var testingLv2 = false;
 var testingSubstitutionCypher = false;
 
-function onFormSubmit(e: any): void {
+function onFormSubmit(e: KeyboardEvent): void {
     event.preventDefault();
     resetForm();
 }
@@ -24,9 +24,10 @@ function onSuccess(text: string): void {
     alert(text);
 }
 
-function lv1KeyUp(evt: any): boolean {
+function lv1KeyUp(evt: KeyboardEvent): boolean {
     var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
     if (testingLv1) {
+        console.log('lv1KeyUp: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textbox);
         console.log(textbox.value);
@@ -38,10 +39,11 @@ function lv1KeyUp(evt: any): boolean {
     return false;
 }
 // <input onkeypress="javascript:return false;" id="txtChar" onkeydown="javascript:return displayKeyCode(event)" type="text" name="txtChar">
-function lv1KeyDn(evt: any): boolean {
+function lv1KeyDn(evt: KeyboardEvent): boolean {
     var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
     var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
     if (testingLv1) {
+        console.log('lv1KeyDn: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textbox);
         console.log(textbox.value);
@@ -55,9 +57,10 @@ function lv1KeyDn(evt: any): boolean {
     return false;
 }
 
-function lv2KeyUp(evt: any): boolean {
+function lv2KeyUp(evt: KeyboardEvent): boolean {
     var textTest2 = document.getElementById('textTest2') as HTMLInputElement;
     if (testingLv2) {
+        console.log('lv1KeyUp: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textTest2);
         console.log(textTest2.value);
@@ -71,10 +74,10 @@ function lv2KeyUp(evt: any): boolean {
     return false;
 }
 
-function lv2KeyDn(event: any): boolean {
+function lv2KeyDn(event: KeyboardEvent): boolean {
     return false;
 }
-function lv2MouseOver(event: any): boolean {
+function lv2MouseOver(event: KeyboardEvent): boolean {
     return false;
 }
 

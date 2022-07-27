@@ -1,6 +1,6 @@
 var count = 0;
 var testing = false;
-var testingLv1 = false;
+var testingLv1 = true;
 var testingLv2 = false;
 var testingSubstitutionCypher = false;
 function onFormSubmit(e) {
@@ -22,6 +22,7 @@ function onSuccess(text) {
 function lv1KeyUp(evt) {
     var textbox = document.getElementById('textTest1');
     if (testingLv1) {
+        console.log('lv1KeyUp: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textbox);
         console.log(textbox.value);
@@ -37,6 +38,7 @@ function lv1KeyDn(evt) {
     var textbox = document.getElementById('textTest1');
     var textTest2 = document.getElementById('textTest2');
     if (testingLv1) {
+        console.log('lv1KeyDn: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textbox);
         console.log(textbox.value);
@@ -52,6 +54,7 @@ function lv1KeyDn(evt) {
 function lv2KeyUp(evt) {
     var textTest2 = document.getElementById('textTest2');
     if (testingLv2) {
+        console.log('lv1KeyUp: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textTest2);
         console.log(textTest2.value);
