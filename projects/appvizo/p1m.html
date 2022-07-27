@@ -1,86 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Info -->
+    <title>Project 3</title>
+    <meta name="author" content="Elliott Claus" />
+    <meta name="description" content="Elliott's Webiste" />
+    <meta name="keywords" content="Resume, Projects, Github, Programming" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <!-- References -->
+    <link rel="stylesheet" href="../../styles.css" />
+    <script
+      src="../../components/projectsHeader.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script
+      src="../../components/footer.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../images/favicon/site.webmanifest" />
+  </head>
 
-<head>
-  <!-- Info -->
-  <title>Project 3</title>
-  <meta name="author" content="Elliott Claus">
-  <meta name="description" content="Elliott's Webiste">
-  <meta name="keywords" content="Resume, Projects, Github, Programming">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <!-- References -->
-  <link rel="stylesheet" href="../../styles.css">
-  <script src="../../components/projectsHeader.js" type="text/javascript" defer></script>
-  <script src="../../components/footer.js" type="text/javascript" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../../images/favicon/site.webmanifest">
-</head>
-
-<body class="d-flex flex-column h-100 vsc-initialized">
-  <!-- Begin page content -->
-  <main class="flex-shrink-0">
-    <!-- Navbar -->
-    <projects-header></projects-header>
-    <!-- Main -->
-    <div class="container">
-      <h1 class="mt-5">Project 3</h1>
-      <p class="lead">refactored a clients python code</p>
-      <div class="row">
-        <div class="col-lg-7">
-          <h4>Project Overview:</h4>
-          <p>AppVizo had previously written a webscraper for this client. It scraped a website, edited the returned
-            data, and then outputted a csv file. This ran daily on a server. The client added functionality, scraping
-            multiple other websites. This added complexity, until it was difficult to tell what part of the program did
-            what. There were multiple files hundreds of lines of code long. Some of them were redundant, but it was
-            unclear what was actually used and important.</p>
-          <p>The client came back to AppVizo and asked for additional functionality, scraping another website, as well
-            as combining all the different scrapes into a single file. (Each one was outputting a separate csv file.)
-          </p>
-          <h4>What I did:</h4>
-          <p>I read through all the current code and figured out what each piece did, and which pieces were copies of
-            functions from other files. I added a
-          <pre>def main()</pre> and<br><br>
-          <pre>if __name__ == "__main__": 
-    main()</pre> to each file, and then called the relevant ones from a main.py
-          file. This added clarity to what ran when.</p>
-          <p>One of the other programmers added SQLite to the program. After that was done, I added that functionality
-            to all the other files, so that everything outputted to a SQLite file, which at the end put out a single csv
-            file. This helped the code to run faster, and made it easier to debug if any of the web scrapes failed. It
-            also helped to format each scrape into a similar data format, which the client needed.</p>
-          <p><b>tl;dr</b> Refactored a client's python code and added additional functionality using pandas and SQLite.
-          </p>
-          <h4 class="mt-5">Skills demonstrated:</h4>
-          <ul class="list-unstyled">
-            <li>
-              <ul>
-                <li>Managing complexity as projects get bigger and expand in scope</li>
-                <li>Refactoring an existing code base</li>
-                <li>Python pandas and SQLite integration</li>
-                <li>Working with a client when what they ask for requires more work than they realize</li>
-                <li>Working with other programmers, integrating other people's code</li>
-                <li>Git: merging, branches, and pull/push</li>
-                <li>Code base: Python</li>
-              </ul>
-            </li>
-          </ul>
+  <body class="d-flex flex-column h-100 vsc-initialized">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <!-- Navbar -->
+      <projects-header></projects-header>
+      <!-- Main -->
+      <div class="container">
+        <h1 class="mt-5">Project 3</h1>
+        <p class="lead">refactored a clients python code</p>
+        <div class="row">
+          <div class="col-lg-7">
+            <h4>Project Overview:</h4>
+            <p>
+              AppVizo had previously written a webscraper for this client. It
+              scraped a website, edited the returned data, and then outputted a
+              csv file. This ran daily on a server. The client added
+              functionality, scraping multiple other websites. This added
+              complexity, until it was difficult to tell what part of the
+              program did what. There were multiple files hundreds of lines of
+              code long. Some of them were redundant, but it was unclear what
+              was actually used and important.
+            </p>
+            <p>
+              The client came back to AppVizo and asked for additional
+              functionality, scraping another website, as well as combining all
+              the different scrapes into a single file. (Each one was outputting
+              a separate csv file.)
+            </p>
+            <h4>What I did:</h4>
+            <p>
+              I read through all the current code and figured out what each
+              piece did, and which pieces were copies of functions from other
+              files. I added a
+            </p>
+            <pre>def main()</pre>
+            and<br /><br />
+            <pre>
+if __name__ == "__main__": 
+    main()</pre
+            >
+            <p>
+              to each file, and then called the relevant ones from a main.py
+              file. This added clarity to what ran when.
+            </p>
+            <p>
+              One of the other programmers added SQLite to the program. After
+              that was done, I added that functionality to all the other files,
+              so that everything outputted to a SQLite file, which at the end
+              put out a single csv file. This helped the code to run faster, and
+              made it easier to debug if any of the web scrapes failed. It also
+              helped to format each scrape into a similar data format, which the
+              client needed.
+            </p>
+            <p>
+              <b>tl;dr</b> Refactored a client's python code and added
+              additional functionality using pandas and SQLite.
+            </p>
+            <h4 class="mt-5">Skills demonstrated:</h4>
+            <ul class="list-unstyled">
+              <li>
+                <ul>
+                  <li>
+                    Managing complexity as projects get bigger and expand in
+                    scope
+                  </li>
+                  <li>Refactoring an existing code base</li>
+                  <li>Python pandas and SQLite integration</li>
+                  <li>
+                    Working with a client when what they ask for requires more
+                    work than they realize
+                  </li>
+                  <li>
+                    Working with other programmers, integrating other people's
+                    code
+                  </li>
+                  <li>Git: merging, branches, and pull/push</li>
+                  <li>Code base: Python</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-5"></div>
         </div>
-        <div class="col-lg-5"></div>
+        <br /><br /><br /><br />
       </div>
-      <br><br><br><br>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer-component></footer-component>
-  <!-- Necessary for dropdowns -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-</body>
-
+    </main>
+    <!-- Footer -->
+    <footer-component></footer-component>
+    <!-- Necessary for dropdowns -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -16,7 +16,7 @@ function resetForm(): void {
 }
 
 function resetButton(toReset: string): void {
-    var toClear = document.getElementById(toReset) as HTMLInputElement;
+    var toClear = document.getElementById(toReset) as HTMLTextAreaElement;
     toClear.value = '';
 }
 
@@ -71,6 +71,9 @@ function lv2KeyUp(evt: any): boolean {
     return false;
 }
 
+function lv2KeyDn(event: any): boolean {
+    return false;
+}
 function lv2MouseOver(event: any): boolean {
     return false;
 }

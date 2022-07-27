@@ -1,18 +1,24 @@
 {
-    "tabWidth": 4,
-    "singleQuote": true,
-    "overrides": [
-        {
-            "files": "*.html",
-            "options": {
-                "tabWidth": 2
-            }
-        },
-        {
-            "files": "*.css",
-            "options": {
-                "tabWidth": 2
-            }
-        }
-    ]
+  "tabWidth": 4,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }

@@ -64,6 +64,9 @@ function lv2KeyUp(evt) {
     textTest2.value = textBox.toString();
     return false;
 }
+function lv2KeyDn(event) {
+    return false;
+}
 function lv2MouseOver(event) {
     return false;
 }
