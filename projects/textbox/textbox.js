@@ -1,8 +1,27 @@
 var count = 0;
 var testing = false;
-var testingLv1 = true;
+var testingLv1 = false;
 var testingLv2 = false;
+var testingLv2MouseEvent = false;
 var testingSubstitutionCypher = false;
+var isStarted = false;
+var lv1Completed;
+var lv2Completed;
+// Starts the game
+function startButton() {
+    isStarted = true;
+    if (isStarted) {
+        var start = document.getElementById('start');
+        var textTest1 = document.getElementById('textTest1');
+        var resetButton = document.getElementById('clearText');
+        start.textContent = 'Reset';
+        textTest1.disabled = false;
+        resetButton.disabled = false;
+        resetButton.textContent = 'Reset First Level';
+        lv1Completed = false;
+        lv2Completed = false;
+    }
+}
 function onFormSubmit(e) {
     event.preventDefault();
     resetForm();
@@ -56,21 +75,49 @@ function lv2KeyUp(evt) {
     if (testingLv2) {
         console.log('lv1KeyUp: evt, textbox, textbox.value');
         console.log(evt);
-        console.log(textTest2);
         console.log(textTest2.value);
     }
+    var textBox;
     if (isLetter(evt.keyCode)) {
         count++;
-        var textBox = textTest2.value.slice(0, -1);
+        textBox = textTest2.value.slice(0, -1);
         textBox += substitutionCypher(count % 26, evt.keyCode);
+        textTest2.value = textBox;
     }
-    textTest2.value = textBox.toString();
     return false;
 }
 function lv2KeyDn(event) {
+    var textTest2 = document.getElementById('textTest2');
+    if (testingLv2) {
+        console.log('lv1KeyDn: evt, textbox, textbox.value');
+        console.log(event);
+        console.log(textTest2.value);
+    }
+    return false;
+}
+function lv2KeyPress(event) {
+    var textTest2 = document.getElementById('textTest2');
+    if (testingLv2) {
+        console.log('lv1KeyPress: evt, textbox, textbox.value');
+        console.log(event);
+        console.log(textTest2.value);
+    }
     return false;
 }
 function lv2MouseOver(event) {
+    var textTest2 = document.getElementById('textTest2');
+    if (testingLv2MouseEvent) {
+        console.log('lv1MouseOver: evt, textbox, textbox.value');
+        console.log(event);
+        console.log(textTest2.value);
+    }
+    var aleartTriggered = false;
+    if (event.type == 'mouseover' &&
+        event.timeStamp > 1000 * 60 * 60 &&
+        !aleartTriggered) {
+        alert("Hint: This is a substitution cypher. Type 'a' repeatedly");
+        aleartTriggered = true;
+    }
     return false;
 }
 function isLetter(input) {

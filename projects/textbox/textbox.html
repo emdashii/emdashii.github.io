@@ -63,46 +63,54 @@
                 This is like a game. As you type, the output will be different
                 from the letter typed. Try to follow the instructions. :P
               </p>
+              <button
+                type="submit"
+                id="start"
+                onclick="startButton()"
+                class="btn btn-secondary"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Click this to start (or restart)"
+              >
+                Start
+              </button>
             </div>
             <form autocomplete="off" onsubmit="onFormSubmit()">
               <div class="input-group">
-                <span class="input-group-text">Type: test</span>
                 <textarea
                   class="form-control"
                   aria-label="With textarea"
                   id="textTest1"
+                  disabled
                   onkeydown="lv1KeyDn(event)"
                   onkeyup="lv1KeyUp(event)"
                 ></textarea>
               </div>
+              <br />
               <div class="input-group">
                 <textarea
                   class="form-control"
                   aria-label="textTest2"
                   id="textTest2"
-                  disabled="false"
+                  disabled
                   onkeydown="lv2KeyDn(event)"
                   onkeyup="lv2KeyUp(event)"
+                  onkeypress="lv2KeyPress(event)"
                   onmouseover="lv2MouseOver(event)"
                 ></textarea>
               </div>
+              <br />
               <div class="mb-3">
                 <button
                   class="btn btn-primary"
-                  id="clearText1"
+                  id="clearText"
                   onclick="resetButton('textTest2')"
+                  disabled
                   data-toggle="tooltip"
                   data-placement="top"
                   title="Click to Reset the Text Test"
                 >
                   Reset
-                </button>
-                <button
-                  class="btn btn-primary"
-                  id="clearText1"
-                  onclick="onSuccess('You beat the text test! Well done')"
-                >
-                  Success
                 </button>
               </div>
               <br />
@@ -110,6 +118,7 @@
                 <button
                   type="submit"
                   class="btn btn-secondary"
+                  disabled
                   data-toggle="tooltip"
                   data-placement="top"
                   title="When you complete the challenge, this button will become available to you."
