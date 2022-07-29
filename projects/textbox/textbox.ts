@@ -7,26 +7,97 @@ var testingSubstitutionCypher = false;
 
 var isStarted = false;
 var lv1Completed: boolean;
+var lv1Stage1Complete: boolean;
+var lv1Stage2Complete: boolean;
 var lv2Completed: boolean;
 
 // Starts the game
 function startButton() {
-    isStarted = true;
-    if (isStarted) {
+    var textTest1 = document.getElementById('textTest1') as HTMLTextAreaElement;
+    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
+    var resetButton = document.getElementById('clearText') as HTMLButtonElement;
+    if (!isStarted) {
         var start = document.getElementById('start') as HTMLButtonElement;
-        var textTest1 = document.getElementById(
-            'textTest1'
-        ) as HTMLTextAreaElement;
-        var resetButton = document.getElementById(
-            'clearText'
-        ) as HTMLButtonElement;
         start.textContent = 'Reset';
         textTest1.disabled = false;
         resetButton.disabled = false;
         resetButton.textContent = 'Reset First Level';
         lv1Completed = false;
+        lv1Stage1Complete = false;
+        lv1Stage2Complete = false;
         lv2Completed = false;
+        count = 0;
     }
+    if (isStarted) {
+        resetButton.textContent = 'Reset First Level';
+        textTest1.disabled = false; // turn on level 1
+        textTest2.disabled = true; // turn off level 2
+        textTest1.textContent = 'has been reset';
+        textTest2.textContent = generateParagraph(8);
+        resetButton.disabled = false;
+        // reset completed
+        lv1Completed = false;
+        lv1Stage1Complete = false;
+        lv1Stage2Complete = false;
+        lv2Completed = false;
+        count = 0;
+    }
+    isStarted = true;
+}
+
+function gameMaster(evt: KeyboardEvent): boolean {
+    var stageComplete = false;
+    var textTest1 = document.getElementById('textTest1') as HTMLTextAreaElement;
+    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
+    var resetButton = document.getElementById('clearText') as HTMLButtonElement;
+    // level 1 logic
+    if (!lv1Completed) {
+        if (!lv1Stage1Complete) {
+            lv1Stage1Complete = lv1Stage1(textTest1);
+        }
+        if (lv1Stage1Complete && !lv1Stage2Complete) {
+            lv1Stage2Complete = lv1Stage2(textTest1);
+        }
+        if (lv1Stage1Complete && lv1Stage2Complete) {
+            textTest2.value = 'now you can type here';
+            resetButton.textContent = 'Reset Second Level';
+            textTest2.disabled = false;
+            lv1Completed = true;
+        }
+    }
+    // level 2 logic
+    if (lv1Completed && !lv2Completed) {
+    }
+    return stageComplete;
+}
+
+function lv1KeyPress(evt: KeyboardEvent): boolean {
+    if (testingLv1) {
+        console.log('lv1KeyUp: evt');
+        console.log(evt);
+    }
+    gameMaster(evt);
+    return false;
+}
+
+function lv1Stage1(textbox: HTMLTextAreaElement): boolean {
+    var completed = false;
+    if (textbox.value == 'test') {
+        onSuccess('You completed the first tast. Now type: things are good');
+        resetTextArea('textTest1');
+        completed = true;
+    }
+    return completed;
+}
+
+function lv1Stage2(textbox: HTMLTextAreaElement): boolean {
+    var completed = false;
+    if (textbox.value == 'things are good') {
+        onSuccess('You have unlocked the second level. Continue by typing: ');
+        textbox.value = 'are they really? xD';
+        completed = true;
+    }
+    return completed;
 }
 
 function onFormSubmit(e: KeyboardEvent): void {
@@ -36,56 +107,37 @@ function onFormSubmit(e: KeyboardEvent): void {
 
 //Reset the data
 function resetForm(): void {
-    resetButton('textTest1');
-    resetButton('textTest2');
+    resetTextArea('textTest1');
+    resetTextArea('textTest2');
 }
 
-function resetButton(toReset: string): void {
+function resetTextArea(toReset: string): void {
     var toClear = document.getElementById(toReset) as HTMLTextAreaElement;
-    toClear.value = '';
+    toClear.textContent = '';
+}
+
+function resetButton(): void {
+    var resetButton = document.getElementById('clearText') as HTMLButtonElement;
+    if (resetButton.textContent == 'Reset First Level') {
+        resetTextArea('textTest1');
+        lv1Completed = false;
+        lv1Stage1Complete = false;
+        lv1Stage2Complete = false;
+    } else if (resetButton.textContent == 'Reset Second Level') {
+        resetTextArea('textTest2');
+        lv2Completed = false;
+        count = 0;
+    }
 }
 
 function onSuccess(text: string): void {
     alert(text);
 }
 
-function lv1KeyUp(evt: KeyboardEvent): boolean {
-    var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
-    if (testingLv1) {
-        console.log('lv1KeyUp: evt, textbox, textbox.value');
-        console.log(evt);
-        console.log(textbox);
-        console.log(textbox.value);
-    }
-    if (textbox.value == 'test') {
-        onSuccess('You completed the first tast. Now type: things are good');
-        resetButton('textTest1');
-    }
-    return false;
-}
-// <input onkeypress="javascript:return false;" id="txtChar" onkeydown="javascript:return displayKeyCode(event)" type="text" name="txtChar">
-function lv1KeyDn(evt: KeyboardEvent): boolean {
-    var textbox = document.getElementById('textTest1') as HTMLTextAreaElement;
-    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
-    if (testingLv1) {
-        console.log('lv1KeyDn: evt, textbox, textbox.value');
-        console.log(evt);
-        console.log(textbox);
-        console.log(textbox.value);
-    }
-    if (textbox.value == 'things are goo' && evt.key == 'd') {
-        onSuccess('You have unlocked the second level. Continue by typing: ');
-        textbox.value = 'are they really? x';
-        textTest2.value = 'now you can type here';
-        textTest2.disabled = false;
-    }
-    return false;
-}
-
-function lv2KeyUp(evt: KeyboardEvent): boolean {
-    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
+function lv2KeyPress(evt: KeyboardEvent): boolean {
+    var textTest2 = document.getElementById('textTest2') as HTMLInputElement;
     if (testingLv2) {
-        console.log('lv1KeyUp: evt, textbox, textbox.value');
+        console.log('lv1KeyPress: evt, textbox, textbox.value');
         console.log(evt);
         console.log(textTest2.value);
     }
@@ -99,24 +151,6 @@ function lv2KeyUp(evt: KeyboardEvent): boolean {
     return false;
 }
 
-function lv2KeyDn(event: KeyboardEvent): boolean {
-    var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
-    if (testingLv2) {
-        console.log('lv1KeyDn: evt, textbox, textbox.value');
-        console.log(event);
-        console.log(textTest2.value);
-    }
-    return false;
-}
-function lv2KeyPress(event: KeyboardEvent): boolean {
-    var textTest2 = document.getElementById('textTest2') as HTMLInputElement;
-    if (testingLv2) {
-        console.log('lv1KeyPress: evt, textbox, textbox.value');
-        console.log(event);
-        console.log(textTest2.value);
-    }
-    return false;
-}
 function lv2MouseOver(event: MouseEvent): boolean {
     var textTest2 = document.getElementById('textTest2') as HTMLTextAreaElement;
     if (testingLv2MouseEvent) {

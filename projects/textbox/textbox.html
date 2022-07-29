@@ -81,9 +81,8 @@
                   class="form-control"
                   aria-label="With textarea"
                   id="textTest1"
-                  disabled
-                  onkeydown="lv1KeyDn(event)"
-                  onkeyup="lv1KeyUp(event)"
+                  disabled="true"
+                  onkeypress="lv1KeyPress(event)"
                 ></textarea>
               </div>
               <br />
@@ -92,9 +91,7 @@
                   class="form-control"
                   aria-label="textTest2"
                   id="textTest2"
-                  disabled
-                  onkeydown="lv2KeyDn(event)"
-                  onkeyup="lv2KeyUp(event)"
+                  disabled="true"
                   onkeypress="lv2KeyPress(event)"
                   onmouseover="lv2MouseOver(event)"
                 ></textarea>
@@ -104,8 +101,8 @@
                 <button
                   class="btn btn-primary"
                   id="clearText"
-                  onclick="resetButton('textTest2')"
-                  disabled
+                  onclick="resetButton()"
+                  disabled="true"
                   data-toggle="tooltip"
                   data-placement="top"
                   title="Click to Reset the Text Test"
@@ -118,7 +115,7 @@
                 <button
                   type="submit"
                   class="btn btn-secondary"
-                  disabled
+                  disabled="true"
                   data-toggle="tooltip"
                   data-placement="top"
                   title="When you complete the challenge, this button will become available to you."
