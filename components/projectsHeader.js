@@ -44,6 +44,7 @@ class Header extends HTMLElement {
                         <li><a class="dropdown-item" href="../../notes/keyboard_shortcuts.html">Keyboard Shortcuts</a></li>
                         <li><a class="dropdown-item" href="../../notes/test_page.html">Test Page</a></li>
                         <li><a class="dropdown-item" href="../../notes/xplore_scripts.html">Xplore Scripts</a></li>
+                                                <li><a class="dropdown-item" href="../../notes/unicode.html">Unicode Symbols</a></li>
                     </ul>
                 </li>
             </ul>
