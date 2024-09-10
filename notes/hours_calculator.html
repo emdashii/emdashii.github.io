@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Info -->
+    <title>hours calculator</title>
+    <meta name="author" content="Elliott Claus" />
+    <meta name="description" content="Elliott's Webiste" />
+    <meta name="keywords" content="Resume, Projects, Github, Programming" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <!-- References -->
+    <script
+      src="../components/notesHeader.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../components/footer.js" type="text/javascript" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <style>
+      .test-container {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      #results {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e7f3ff;
+        border-radius: 4px;
+      }
+      .on-track {
+        color: green;
+      }
+      .behind-schedule {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column h-100 vsc-initialized">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <!-- Navbar -->
+      <notes-header></notes-header>
+      <!-- Main -->
+      <div class="container">
+        <h1 class="mt-5">hours calculator</h1>
+        <p class="lead">a touch of motivation to see if i'm on track</p>
+        <div class="row">
+          <form id="workHoursForm" class="test-container">
+            <label for="workedHours">Monthly Hours Worked:</label>
+            <input type="number" id="workedHours" required />
+
+            <label for="hourlyGoal">Monthly Hourly Goal:</label>
+            <input type="number" id="hourlyGoal" required />
+
+            <label for="dailyGoal">Ideal Hours/Day:</label>
+            <input type="number" id="dailyGoal" required />
+
+            <input type="submit" value="Calculate" />
+          </form>
+          <div class="row">
+            <div id="results"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer-component></footer-component>
+    <!-- Necessary for dropdowns -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('workHoursForm');
+        const results = document.getElementById('results');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          calculateWorkHours();
+        });
+
+        function calculateWorkHours() {
+          const workedHours = parseFloat(
+            document.getElementById('workedHours').value
+          );
+          const hourlyGoal = parseFloat(
+            document.getElementById('hourlyGoal').value
+          );
+          const dailyGoal = parseFloat(
+            document.getElementById('dailyGoal').value
+          );
+
+          const now = new Date();
+          const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+          let remainingWorkDays = 0;
+
+          for (let d = now; d <= lastDay; d.setDate(d.getDate() + 1)) {
+            if (d.getDay() !== 0 && d.getDay() !== 6) remainingWorkDays++;
+          }
+
+          const totalMonthlyHours = hourlyGoal;
+          const remainingHours = totalMonthlyHours - workedHours;
+          const dailyRequired = remainingHours / remainingWorkDays;
+          const onTrack = dailyRequired <= dailyGoal;
+
+          let resultHtml = `
+                  <p>Remaining work days this month: ${remainingWorkDays}</p>
+                  <p>Remaining hours to work: ${remainingHours.toFixed(2)}</p>
+                  <p class="${onTrack ? 'on-track' : 'behind-schedule'}">
+                      Status: ${onTrack ? 'On track' : 'Behind schedule'}
+                  </p>
+              `;
+
+          if (!onTrack) {
+            resultHtml += `
+                      <p>To get back on track, work ${dailyRequired.toFixed(
+                        2
+                      )} hours each remaining work day.</p>
+                  `;
+          }
+
+          results.innerHTML = resultHtml;
+        }
+      });
+    </script>
+  </body>
+</html>
