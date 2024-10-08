@@ -212,6 +212,10 @@
           )} hours this month, making $${(
             monthlyHoursAtTargetRate * hourlyRate
           ).toFixed(2)}.</p>
+          <p>Average daily hours worked so far: ${(
+            workedHours /
+            (totalWorkDays - remainingWorkDays)
+          ).toFixed(2)}</p>
           <p>Days already worked: ${totalWorkDays - remainingWorkDays}</p>
           <p>Money already earned: $${(workedHours * hourlyRate).toFixed(2)}</p>
               `;
