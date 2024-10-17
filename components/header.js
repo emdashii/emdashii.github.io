@@ -36,7 +36,7 @@ class Header extends HTMLElement {
                 Generator</a>
             </li>
             <li>
-              <a class="dropdown-item" href="projects/keyboard/overview.html">Split Keyboard Keymap</a>
+              <a class="dropdown-item" href="projects/keyboard/kbd_overview.html">Split Keyboard Keymap</a>
             </li>
             <li>
               <a class="dropdown-item" href="projects/appvizo/overview.html">Junior Developer Projects</a>
