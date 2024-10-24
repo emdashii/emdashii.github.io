@@ -65,6 +65,9 @@ class Header extends HTMLElement {
             <li>
               <a class="dropdown-item" href="../../notes/hours_calculator.html">Monthly Hours</a>
             </li>
+            <li>
+              <a class="dropdown-item" href="../../notes/hammock_suspension.html">Hammock Suspension Calculator</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item dropdown">
